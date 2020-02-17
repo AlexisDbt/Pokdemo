@@ -3,14 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PokemonComponentComponent } from './pokemon-component/pokemon-component.component';
+import { FormsModule } from '@angular/forms';
+import { FilterPokemonPipePipe } from './filter-pokemon--pipe.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PokemonComponentComponent,
+    FilterPokemonPipePipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule, //Line to add
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

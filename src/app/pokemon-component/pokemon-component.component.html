@@ -1,0 +1,27 @@
+<div style="text-align: center;">
+    <label> Id du pokemon : 
+		<input type="text" [(ngModel)]="id">
+    </label>
+</div>
+<br>
+<div style="text-align: center;">
+    <label> Id du pokemon : 
+        <input readonly type="text" [(ngModel)]="id">
+    </label>
+</div>
+<br>
+<div style="text-align: center;">
+    <label>
+        Id : {{id}}
+    </label>
+</div>
+<br>
+<div style="text-align: center;">
+    <label>Choix pokemon : 
+        <select [(ngModel)]="choixPoke">
+            <option value="pokemons.name" *ngFor="let pokemon of pokemons">
+                {{pokemon.name}}
+            </option>
+        </select>
+    </label>
+</div>
