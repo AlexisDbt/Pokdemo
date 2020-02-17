@@ -19,7 +19,7 @@
 <div style="text-align: center;">
     <label>Choix pokemon : 
         <select [(ngModel)]="choixPoke">
-            <option value="pokemons.name" *ngFor="let pokemon of pokemons">
+            <option value="pokemons.name" *ngFor="let pokemon of pokemons !">
                 {{pokemon.name}}
             </option>
         </select>
