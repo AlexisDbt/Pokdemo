@@ -10,13 +10,14 @@ export class PokemonComponentComponent implements OnInit {
 
   id: string = '';
   choixPoke: string = '';
+  filterPok: string = '';
 
   pokemons: Pokemon [] = [
-    {id: 1, name: 'Bulbizarre'},
-    {id: 2, name: 'Salameche'},
-    {id: 3, name: 'Carapuce'},
-    {id: 4, name: 'Tortank'},
-    {id: 5, name: 'Dracaufeu'}
+    {id: 1, name: 'Salerno'},
+    {id: 2, name: 'Sarrazin'},
+    {id: 3, name: 'Chapon'},
+    {id: 4, name: 'Dulac'},
+    {id: 5, name: 'Quiche'}
   ];
 
   constructor() { }

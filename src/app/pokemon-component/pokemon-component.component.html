@@ -5,6 +5,13 @@
 </div>
 <br>
 <div style="text-align: center;">
+    <label> Nom du pokemon : 
+		<input type="text" [(ngModel)]="filterPok">
+    </label>
+</div>
+<br>
+<!--
+<div style="text-align: center;">
     <label> Id du pokemon : 
         <input readonly type="text" [(ngModel)]="id">
     </label>
@@ -16,12 +23,15 @@
     </label>
 </div>
 <br>
+-->
 <div style="text-align: center;">
     <label>Choix pokemon : 
         <select [(ngModel)]="choixPoke">
-            <option value="pokemons.name" *ngFor="let pokemon of pokemons !">
+            <option value="pokemons.name" *ngFor="let pokemon of pokemons | filterPokemonPipe : filterPok">
                 {{pokemon.name}}
             </option>
         </select>
     </label>
+    <button name="go" >GO !</button>
 </div>
+<br>
