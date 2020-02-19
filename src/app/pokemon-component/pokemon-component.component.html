@@ -13,7 +13,7 @@
 <div style="text-align: center;">
     <label>Choix pokemon : 
         <select [(ngModel)]="choixPoke">
-            <option [value] ="pokemon.name" *ngFor="let pokemon of pokemons?.results | filterPokemonPipe : filterPok">
+            <option [value] ="pokemon.name" *ngFor="let pokemon of ( pokemons?.results | filterPokemonPipe:'name' :filterPok)">
                 {{pokemon.name}}
             </option>
         </select>
