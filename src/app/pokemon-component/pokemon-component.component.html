@@ -1,25 +1,36 @@
-<div style="text-align: center;">
-    <label> Id du pokemon : 
-		<input type="text" [(ngModel)]="id">
-    </label>
+<div class="container">
+  <div style="text-align: center">
+    <div>
+      <mat-form-field>
+        <label>
+          <input [(ngModel)]="id" matInput placeholder="Id du Pokemon">
+        </label>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <label>
+          <input [(ngModel)]="filterPok" matInput placeholder="Nom du Pokemon">
+        </label>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-select [(ngModel)]="choixPoke" placeholder="Choix Pokemon">
+          <mat-option [value]="pokemon.name" *ngFor="let pokemon of ( pokemons?.results | filterPokemonPipe:'name' :filterPok)">
+            {{pokemon.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <button (click)="SelectedPoke()" color="primary" mat-raised-button> GO ! </button>
+    </div>
+    <br>
+    <div>
+      <p><b>{{message}}</b></p>
+    </div>
+  </div>
 </div>
-<br>
-<div style="text-align: center;">
-    <label> Nom du pokemon : 
-		<input type="text" [(ngModel)]="filterPok">
-    </label>
-</div>
-<br>
-<div style="text-align: center;">
-    <label>Choix pokemon : 
-        <select [(ngModel)]="choixPoke">
-            <option [value] ="pokemon.name" *ngFor="let pokemon of ( pokemons?.results | filterPokemonPipe:'name' :filterPok)">
-                {{pokemon.name}}
-            </option>
-        </select>
-    </label>
-    <button (click) = "SelectedPoke()" > GO ! </button>
-</div>
-<div style="text-align: center;">
-    <p><b>{{message}}</b></p>
-</div>
+
+
+
