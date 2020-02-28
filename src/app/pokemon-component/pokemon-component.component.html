@@ -10,20 +10,22 @@
     <div>
       <mat-form-field>
         <label>
-          <input [(ngModel)]="filterPok" matInput placeholder="Nom du Pokemon">
+          <input [(ngModel)]="filterPok.name" matInput placeholder="Nom du Pokemon">
         </label>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field>
         <mat-select [(ngModel)]="choixPoke" placeholder="Choix Pokemon">
-          <mat-option [value]="pokemon.name" *ngFor="let pokemon of ( pokemons?.results | filterPokemonPipe:'name' :filterPok)">
-            {{pokemon.name}}
-          </mat-option>
+          <mat-option *ngFor="let pokemonChoix of pokemons?.results | filterPokemonPipe:filterPok"
+                      [value]="pokemonChoix">{{pokemonChoix.name}}</mat-option>
         </mat-select>
       </mat-form-field>
       <br>
-      <button (click)="SelectedPoke()" color="primary" mat-raised-button> GO ! </button>
+      <button (click)="getOnePokemon(choixPoke)" color="primary" mat-raised-button> GO ! </button>
+    </div>
+    <div>
+      <app-pokemon-detail [pokemon]="choixPoke"></app-pokemon-detail>
     </div>
     <br>
     <div>

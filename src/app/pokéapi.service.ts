@@ -9,19 +9,19 @@ import { Pokemon } from './pokemon';
 })
 export class PokéAPIService {
 
-  url: string;
-  pokemonUrl: any
+  url: any;
 
   constructor(private http: HttpClient) { 
       this.url = "https://pokeapi.co/api/v2/pokemon/"
   }
 
   getPokemons(): Observable<ListPokemon>{
-    return this.http.get<ListPokemon>(`${this.url}`)
+    return this.http.get<ListPokemon>(`${this.url}`).pipe();
+      
   }
 
   getOnePokemon(name: string): Observable<Pokemon> {
-    this.pokemonUrl = this.url + name;
-    return this.http.get<Pokemon>(`${this.pokemonUrl}`)
+    const pokemonUrl = this.url + name;
+    return this.http.get<Pokemon>(`${pokemonUrl}`).pipe();
   }
 }

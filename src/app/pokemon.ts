@@ -2,7 +2,7 @@ export class Pokemon {
 
     name: string;
     id: number;
-
-    constructor() {
-    }
+    weight: number;
+    height: number;
+    sprites: object[];
 }

@@ -13,17 +13,21 @@ export class PokemonComponentComponent implements OnInit {
 
   id: number;
   choixPoke: Pokemon;
-  filterPok: string;
+  filterPok: Pokemon;
   message: string = '';
   pokemons: ListPokemon;
 
   constructor(public pokemonApi : PokéAPIService) { }
 
   ngOnInit(): void {
+   this.getPokemons();
+  }
+
+  getPokemons() {
     this.pokemonApi.getPokemons().subscribe(res => {
-      console.log(res);
-        this.pokemons = res;
+      this.pokemons = res;
     });
+    this.initializeFilter();
   }
 
   getOnePokemon(pokemon: Pokemon) {
@@ -36,6 +40,11 @@ export class PokemonComponentComponent implements OnInit {
 
   SelectedPoke () {
     this.message = "Pokémon sélectionné : " + this.choixPoke;
+  }
+
+  initializeFilter() {
+    this.choixPoke = new Pokemon();
+    this.filterPok = this.choixPoke;
   }
 
 }
