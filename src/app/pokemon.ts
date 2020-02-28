@@ -5,4 +5,5 @@ export class Pokemon {
     weight: number;
     height: number;
     sprites: object[];
+    type: object[];
 }
