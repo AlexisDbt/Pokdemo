@@ -1,5 +1,5 @@
 <div class="container">
-  <div style="text-align: center">
+  <div class="infoBase">
     <div>
       <mat-form-field>
         <label>
@@ -24,14 +24,14 @@
       <br>
       <button (click)="getOnePokemon(choixPoke)" color="primary" mat-raised-button> GO ! </button>
     </div>
-    <div>
+  </div>
+    <div class="pokemonDetail">
       <app-pokemon-detail [pokemon]="choixPoke"></app-pokemon-detail>
     </div>
     <br>
     <div>
       <p><b>{{message}}</b></p>
     </div>
-  </div>
 </div>
 
 
