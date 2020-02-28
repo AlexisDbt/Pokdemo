@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
@@ -21,5 +22,5 @@ export class FilterPokemonPipePipe implements PipeTransform {
         }
       }
     }
-    
+
 }
