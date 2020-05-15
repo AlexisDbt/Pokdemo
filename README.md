@@ -12,4 +12,4 @@ L'application permet de :
 
 ## Angular Material
 
-L'interface à été développée en utilisant Angular Material afin de rendre celà plus esthétique.
+L'interface à été développée en utilisant Angular Material afin de rendre cela plus esthétique.
